@@ -24,14 +24,14 @@ This document will walk you through the process of:
 1. First, open up your webrowser and go to http://bitbucket.org/, and click on
    the **Get started** on the upper right-hand corner:
 
-    <img src="http://www3.nd.edu/~pbui/teaching/cse.34331.fa15/static/img/bitbucket_get_started.png" />
+    ![Bitbucket - Get started](http://www3.nd.edu/~pbui/teaching/cse.34331.fa15/static/img/bitbucket_get_started.png)
 
 2. Next, you are to fill out the **Sign up** form with your information.  You
    can use any `username` and `password`, but we recommend that your `username`
    be your `NetID`.  Likewise, we recommend that you use your [Notre Dame]
    email address, which will give you access to the [unlimited academic plan].
     
-    <img src="http://www3.nd.edu/~pbui/teaching/cse.34331.fa15/static/img/bitbucket_signup.png" />
+    ![Bitbucket - Sign Up](http://www3.nd.edu/~pbui/teaching/cse.34331.fa15/static/img/bitbucket_signup.png)
 
 You should now have a [Bitbucket] account.
 
@@ -46,13 +46,13 @@ If you already have a [Bitbucket] account but have not associated it with your
    Click on the **Manage Account** button in the upper right-hand corner to
    access your account settings.
     
-    <img src="http://www3.nd.edu/~pbui/teaching/cse.34331.fa15/static/img/bitbucket_manage.png" />
+    ![Bitbucket - Manage](http://www3.nd.edu/~pbui/teaching/cse.34331.fa15/static/img/bitbucket_manage.png)
 
 2. Next, click on the **Email Addressses** link on the left-hand side of the
    page.  This should show the panel with all the email addresses associated
    with your [Bitbucket] account.
     
-    <img src="http://www3.nd.edu/~pbui/teaching/cse.34331.fa15/static/img/bitbucket_email.png" />
+    ![Bitbucket - Email](http://www3.nd.edu/~pbui/teaching/cse.34331.fa15/static/img/bitbucket_email.png)
 
    If your [Notre Dame] is not there, you can go ahead and enter it in and
    press the **Add** button.  This will send an email confirmation to your
