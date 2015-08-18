@@ -33,7 +33,7 @@ This document will walk you through the process of:
     
     ![Bitbucket - Sign Up](http://www3.nd.edu/~pbui/teaching/cse.34331.fa15/static/img/bitbucket_signup.png)
 
-You should now have a [Bitbucket] account.
+    You should now have a [Bitbucket] account.
 
 2. Associate Email Address
 ==========================
@@ -54,9 +54,9 @@ If you already have a [Bitbucket] account but have not associated it with your
     
     ![Bitbucket - Email](http://www3.nd.edu/~pbui/teaching/cse.34331.fa15/static/img/bitbucket_email.png)
 
-   If your [Notre Dame] is not there, you can go ahead and enter it in and
-   press the **Add** button.  This will send an email confirmation to your
-   mailbox.
+    If your [Notre Dame] is not there, you can go ahead and enter it in and
+    press the **Add** button.  This will send an email confirmation to your
+    mailbox.
 
 3. Go to your [Notre Dame] email and click on the confirmation email from
    [Bitbucket] to unlock the [unlimited academic plan].
