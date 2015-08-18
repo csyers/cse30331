@@ -92,3 +92,21 @@ To fork this repository, first navigate to the [cse-30331-fa15 Bitbucket]:
 
 4. Privacy and Access Controls
 ==============================
+
+To verify the privacy and access controls of your new private repository, go to
+the [Bitbucket] page of your clone.
+
+1. Click on the **Settings** button on the left-hand side (ie. the gear).  This
+   will take you to the settings for the repository.  Verify that the
+   `Description` field is filled out correctly.  Likewise, verify that the
+   **This is a private repository box** Access level is checked.
+
+    ![Bitbucket - Repository Details](http://www3.nd.edu/~pbui/teaching/cse.34331.fa15/static/img/bitbucket_repo_details.png)
+
+2. Next, click on the **Access Management** link on the left-hand side.  Verify
+   that the only users are yourself and the [Data Structures Fall
+   2015](https://bitbucket.org/CSE-30331-FA15/) [Bitbucket] user.
+
+    If the course user is missing, add it by entering in the `username`
+    **CSE-30331-FA15**.  Ensure that this user has either **WRITE** or
+    **ADMIN** rights.
