@@ -7,8 +7,10 @@ CSE 30331 Fall 2015 - Assignments
 
 This document will walk you through the process of:
 
-1. Setting up a [Bitbucket] account if you do not already have one or
-   associating your [Notre Dame] email address with your [Bitbucket] account.
+1. Setting up a [Bitbucket] account if you do not already have one.
+
+2. Associating your [Notre Dame] email address with your [Bitbucket] account if
+   it isn't already.
 
 2. Fork this repository to create a private copy.
 
