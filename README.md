@@ -12,27 +12,28 @@ This document will walk you through the process of:
 2. Associating your [Notre Dame] email address with your [Bitbucket] account if
    it isn't already.
 
-2. Fork this repository to create a private copy.
+3. Fork this repository to create a private copy.
 
-3. Configuring the privacy and access controls of the forked repository.
+4. Configuring the privacy and access controls of the forked repository.
 
 [Bitbucket]:	https://bitbucket.org
 [Notre Dame]:	http://www.nd.edu
-[unlimited academic plan]:  https://bitbucket.org/account/user/pbui/plans/
+[unlimited academic plan]:  https://bitbucket.org/plans/
 [cse-30331-fa15 Bitbucket]: https://bitbucket.org/CSE-30331-FA15/cse-30331-fa15
 
 1. Setting Up Account
 =====================
 
-* First, open up your webrowser and go to http://bitbucket.org/, and click on
+* First, open up your web browser and go to http://bitbucket.org/, and click on
   the **Get started** on the upper right-hand corner:
 
     ![Bitbucket - Get started](http://www3.nd.edu/~pbui/teaching/cse.34331.fa15/static/img/bitbucket_get_started.png)
 
 * Next, you are to fill out the **Sign up** form with your information.  You
-  can use any `username` and `password`, but we recommend that your `username`
-  be your `NetID`.  Likewise, we recommend that you use your [Notre Dame] email
-  address, which will give you access to the [unlimited academic plan].
+  can use any **Username** and **Password**, but we recommend that your
+  **Username** be your [Notre Dame] NetID if possible.  Likewise, we recommend 
+  that you use your [Notre Dame] email address, which will give you access to 
+  the [unlimited academic plan].
 
     ![Bitbucket - Sign Up](http://www3.nd.edu/~pbui/teaching/cse.34331.fa15/static/img/bitbucket_signup.png)
 
@@ -43,7 +44,7 @@ This document will walk you through the process of:
 2. Associating Email Address
 ============================
 
-If you already have a [Bitbucket] account but have not associated it with your
+If you have a [Bitbucket] account but have not associated it with your
 [Notre Dame] email address, you may wish to do so in order to get the
 [unlimited academic plan].
 
@@ -54,7 +55,7 @@ If you already have a [Bitbucket] account but have not associated it with your
 
     ![Bitbucket - Manage](http://www3.nd.edu/~pbui/teaching/cse.34331.fa15/static/img/bitbucket_manage.png)
 
-* Next, click on the **Email Addressses** link on the left-hand side of the
+* Next, click on the **Email Addresses** link on the left-hand side of the
   page.  This should show the panel with all the email addresses associated
   with your [Bitbucket] account.
 
@@ -84,15 +85,15 @@ To fork this repository, first navigate to the [cse-30331-fa15 Bitbucket]:
     using the username and password you registered previously.
 
 * Once you are signed in (or if you are already signed in), [Bitbucket] will
-  take you to the **Fork** dialog.  Leave the `Name` alone and enter in
-  "Assignments for Full Name (NetID)" into the `Description` field (replacing
-  `Full Name` and `NetID`) with the appropriate values.   Additionally, ensure
-  that you check the **This is a private repository** box and the **Inherit
-  repository user/group permissions** boxes.
+  take you to the **Fork** dialog.  Leave the **Name** alone and enter in
+  "Assignments for _Full Name_ (_NetID_)" into the **Description** field 
+  (replacing _Full Name_ and _NetID_ with your name and NetID).  Additionally,
+  ensure that you check the **This is a private repository** box and the 
+  **Inherit repository user/group permissions** boxes. 
 
     ![Bitbucket - Fork Dialog](http://www3.nd.edu/~pbui/teaching/cse.34331.fa15/static/img/bitbucket_fork_dialog.png)
 
-    Once you have filled out the information, click on the `Fork repository`
+    Once you have filled out the information, click on the **Fork repository**
     button to complete the process.
 
 4. Configuring Privacy and Access Controls
@@ -101,18 +102,19 @@ To fork this repository, first navigate to the [cse-30331-fa15 Bitbucket]:
 To verify the privacy and access controls of your new private repository, go to
 the [Bitbucket] page of your clone.
 
-* Click on the **Settings** button on the left-hand side (ie. the gear).  This
+* Click on the **Settings** button (the gear) on the left-hand side.  This
   will take you to the settings for the repository.  Verify that the
-  `Description` field is filled out correctly.  Likewise, verify that the
+  **Description** field is filled out correctly.  Likewise, verify that the
   **This is a private repository box** Access level is checked.
 
     ![Bitbucket - Repository Details](http://www3.nd.edu/~pbui/teaching/cse.34331.fa15/static/img/bitbucket_repo_details.png)
 
 * Next, click on the **Access Management** link on the left-hand side.  Verify
-  that the only users are yourself and the [Data Structures Fall
-  2015](https://bitbucket.org/CSE-30331-FA15/) [Bitbucket] user.
+  that the only users are yourself and [Data Structures Fall
+  2015](https://bitbucket.org/CSE-30331-FA15/).
 
-    If the course user is missing, add it by entering in the `username`
+    If [Data Structures Fall
+  2015](https://bitbucket.org/CSE-30331-FA15/) is missing, add it by entering in a **Username** of
     **CSE-30331-FA15**.  Ensure that this user has either **WRITE** or
     **ADMIN** rights.
 
