@@ -1,10 +1,6 @@
 CSE 30331 Fall 2015 - Assignments
 =================================
 
-- Full Name:	Domer McDomerson
-
-- NetID:	dmcdomers
-
 This document will walk you through the process of:
 
 1. Setting up a [Bitbucket] account if you do not already have one.
