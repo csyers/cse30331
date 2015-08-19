@@ -87,9 +87,13 @@ To fork this repository, first navigate to the [cse-30331-fa15 Bitbucket]:
 * Once you are signed in (or if you are already signed in), [Bitbucket] will
   take you to the **Fork** dialog.  Leave the **Name** alone and enter in
   "Assignments for _Full Name_ (_NetID_)" into the **Description** field 
-  (replacing _Full Name_ and _NetID_ with your name and NetID).  Additionally,
-  ensure that you check the **This is a private repository** box and the 
-  **Inherit repository user/group permissions** boxes. 
+  (replacing _Full Name_ and _NetID_ with your name and NetID).
+
+The following two settings are very important in order for you to get credit for your work!
+
+* Ensure that you check the **This is a private repository** box.
+
+* Ensure that you check the **Inherit repository user/group permissions** box.
 
     ![Bitbucket - Fork Dialog](http://www3.nd.edu/~pbui/teaching/cse.34331.fa15/static/img/bitbucket_fork_dialog.png)
 
