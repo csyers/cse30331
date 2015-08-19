@@ -112,3 +112,5 @@ the [Bitbucket] page of your clone.
     If the course user is missing, add it by entering in the `username`
     **CSE-30331-FA15**.  Ensure that this user has either **WRITE** or
     **ADMIN** rights.
+
+    ![Bitbucket - Access](http://www3.nd.edu/~pbui/teaching/cse.34331.fa15/static/img/bitbucket_repo_access.png)
