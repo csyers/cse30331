@@ -36,7 +36,9 @@ This document will walk you through the process of:
 
     ![Bitbucket - Sign Up](http://www3.nd.edu/~pbui/teaching/cse.34331.fa15/static/img/bitbucket_signup.png)
 
-    You should now have a [Bitbucket] account.
+* [Bitbucket] will now ask if you wish to create a tutorial repository.  You
+  can simply click on **No thanks** to skip this and move on to the dashboard
+  of your new [Bitbucket] account.
 
 2. Associating Email Address
 ============================
@@ -45,9 +47,10 @@ If you already have a [Bitbucket] account but have not associated it with your
 [Notre Dame] email address, you may wish to do so in order to get the
 [unlimited academic plan].
 
-* After signing into [Bitbucket], you should be taken to your profile page.
-  Click on the **Manage Account** button in the upper right-hand corner to
-  access your account settings.
+* After signing into [Bitbucket], you should be taken to your profile
+  dashboard.  Click on either the **Manage Account** button in the upper
+  right-hand corner to access your account settings or from the drop-down menu
+  under your profile icon.
 
     ![Bitbucket - Manage](http://www3.nd.edu/~pbui/teaching/cse.34331.fa15/static/img/bitbucket_manage.png)
 
