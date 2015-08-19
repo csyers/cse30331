@@ -21,8 +21,8 @@ This document will walk you through the process of:
 [unlimited academic plan]:  https://bitbucket.org/account/user/pbui/plans/
 [cse-30331-fa15 Bitbucket]: https://bitbucket.org/CSE-30331-FA15/cse-30331-fa15
 
-1. Account Setup
-================
+1. Setting Up Account
+=====================
 
 1. First, open up your webrowser and go to http://bitbucket.org/, and click on
    the **Get started** on the upper right-hand corner:
@@ -38,8 +38,8 @@ This document will walk you through the process of:
 
     You should now have a [Bitbucket] account.
 
-2. Associate Email Address
-==========================
+2. Associating Email Address
+============================
 
 If you already have a [Bitbucket] account but have not associated it with your
 [Notre Dame] email address, you may wish to do so in order to get the
@@ -92,8 +92,8 @@ To fork this repository, first navigate to the [cse-30331-fa15 Bitbucket]:
     Once you have filled out the information, click on the `Fork repository`
     button to complete the process.
 
-4. Privacy and Access Controls
-==============================
+4. Configuring Privacy and Access Controls
+==========================================
 
 To verify the privacy and access controls of your new private repository, go to
 the [Bitbucket] page of your clone.
