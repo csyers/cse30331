@@ -125,6 +125,6 @@ the [Bitbucket] page of your clone.
 
 Clone your repository onto your own computer, or into your home directory on student0x.cse.nd.edu. The easiest way to do this is to click on **Clone**:
 
-    ![Bitbucket - Clone](http://www3.nd.edu/~pbui/teaching/cse.34331.fa15/static/img/bitbucket_clone.png)
+![Bitbucket - Clone](http://www3.nd.edu/~pbui/teaching/cse.34331.fa15/static/img/bitbucket_clone.png)
 
 Copy the command and paste it into the shell. The repository will be cloned into the directory `cse-30331-fa15` under your current working directory.
