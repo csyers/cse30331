@@ -8,14 +8,17 @@ This document will walk you through the process of:
 2. Associating your [Notre Dame] email address with your [Bitbucket] account if
    it isn't already.
 
-3. Fork this repository to create a private copy.
+3. Forking this repository to create a private copy.
 
 4. Configuring the privacy and access controls of the forked repository.
+
+5. Cloning the remote [Git] Repository from [Bitbucket] to a local workspace.
 
 [Bitbucket]:	https://bitbucket.org
 [Notre Dame]:	http://www.nd.edu
 [unlimited academic plan]:  https://bitbucket.org/plans/
 [cse-30331-fa15 Bitbucket]: https://bitbucket.org/CSE-30331-FA15/cse-30331-fa15
+[Git]:	https://git-scm.com/
 
 1. Setting Up Account
 =====================
