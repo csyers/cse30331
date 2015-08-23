@@ -140,9 +140,9 @@ Copy the command and paste it into the shell. The repository will be cloned into
 
 Every once in a while, the course instructors will push new files or changes to
 the [cse-30331-fa15 Bitbucket] repository.  Because you forked this original
-repository, the [cse-30331-fa15] is considered your **upstream**.  To retrieve
-these new modifications from the **upstream** repository, you can either use
-the web interface provided by [Bitbucket]:
+repository, the [cse-30331-fa15 Bitbucket] is considered your **upstream**.  To
+retrieve these new modifications from the **upstream** repository, you can
+either use the web interface provided by [Bitbucket]:
 
 * Go to your private repository and check on the upper right-hand side of the
   overview page if there is a notification that says something like: "This fork
