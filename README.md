@@ -14,6 +14,9 @@ This document will walk you through the process of:
 
 5. Cloning the remote [Git] Repository from [Bitbucket] to a local workspace.
 
+6. Synchronizing your forked [Git] repository with the upstream class
+   repository.
+
 [Bitbucket]:	https://bitbucket.org
 [Notre Dame]:	http://www.nd.edu
 [unlimited academic plan]:  https://bitbucket.org/plans/
@@ -131,3 +134,49 @@ Clone your repository onto your own computer, or into your home directory on stu
 ![Bitbucket - Clone](http://www3.nd.edu/~pbui/teaching/cse.34331.fa15/static/img/bitbucket_clone.png)
 
 Copy the command and paste it into the shell. The repository will be cloned into the directory `cse-30331-fa15` under your current working directory.
+
+6. Synchronizing the Repository
+===============================
+
+Every once in a while, the course instructors will push new files or changes to
+the [cse-30331-fa15 Bitbucket] repository.  Because you forked this original
+repository, the [cse-30331-fa15] is considered your **upstream**.  To retrieve
+these new modifications from the **upstream** repository, you can either use
+the web interface provided by [Bitbucket]:
+
+* Go to your private repository and check on the upper right-hand side of the
+  overview page if there is a notification that says something like: "This fork
+  is X commits behind CSE-30331-FA15/cse-30331-fa15. Sync now".  If so, then
+  there are changes from the **upstream** repository that you can pull into
+  your private repository.
+
+    ![Bitbucket - Sync](http://www3.nd.edu/~pbui/teaching/cse.34331.fa15/static/img/bitbucket_sync.png)
+
+* To proceed in synchronizing your private repository with **upstream**, click
+  on the **Sync now** link.  This will take you do a dialog that looks like the
+  following:
+
+    ![Bitbucket - Dialog](http://www3.nd.edu/~pbui/teaching/cse.34331.fa15/static/img/bitbucket_sync_dialog.png)
+
+    Go ahead and click on **Sync** to attempt the synchronization.
+
+* If all goes well, then [Bitbucket] will take you to a summary page of the
+  synchronization (also known as a merge) as shown below:
+
+    ![Bitbucket - Merge](http://www3.nd.edu/~pbui/teaching/cse.34331.fa15/static/img/bitbucket_sync_merge.png)
+
+You can now retrieve these changes to your local repository (ie. on
+student0x.cse.nd.edu), but doing a **git pull** in the terminal.
+
+If [Bitbucket] detects the possibility of **merge conflicts**, or if you wish
+to do the synchronization manually, you can instead perform the following steps:
+
+* First, you need to add the **upstream** repository to your local [Git] repository:
+
+	$ git remote add upstream https://bitbucket.org/CSE-30331-FA15/cse-30331-fa15
+
+* Once that is done, everytime you wish to update your local repository with
+  the changes from **upstream**, you can do the following:
+
+	$ git fetch upstream
+	$ git merge upstream/master
