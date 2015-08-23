@@ -173,10 +173,10 @@ to do the synchronization manually, you can instead perform the following steps:
 
 * First, you need to add the **upstream** repository to your local [Git] repository:
 
-	$ git remote add upstream https://bitbucket.org/CSE-30331-FA15/cse-30331-fa15
+        $ git remote add upstream https://bitbucket.org/CSE-30331-FA15/cse-30331-fa15
 
 * Once that is done, everytime you wish to update your local repository with
   the changes from **upstream**, you can do the following:
-
-	$ git fetch upstream
-	$ git merge upstream/master
+  
+        $ git fetch upstream
+        $ git merge upstream/master
