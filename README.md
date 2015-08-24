@@ -146,10 +146,16 @@ You will need to unset the **SSH_ASKPASS** environment variable:
 
     $ unsetenv SSH_ASKPASS  # For csh
 
-    $ unset SSH_ASKPASS     # For bash
-
 Once you unset the **SSH_ASKPASS** variable, you should now perform the **git
 clone** command.
+
+To make this permanent, you can append the **unsetenv SSH_ASKPASS** command to
+your **~/.cshrc** file.
+
+If you use the **bash** shell instead of the default **csh** shell, you will
+need to perform the following command instead:
+
+    $ unset SSH_ASKPASS     # For bash
 
 6. Synchronizing the Repository
 ===============================
