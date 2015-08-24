@@ -135,6 +135,22 @@ Clone your repository onto your own computer, or into your home directory on stu
 
 Copy the command and paste it into the shell. The repository will be cloned into the directory `cse-30331-fa15` under your current working directory.
 
+If you are experiencing the following error on the student0x.cse.nd.edu machines:
+
+    $ git clone https://dmcdomers@bitbucket.org/dmcdomers/cse-30331-fa15.git
+    Initialized empty Git repository in /afs/nd.edu/user99/dmcdomers/cse-30331-fa15/.git/
+
+    (gnome-ssh-askpass:7477): Gtk-WARNING **: cannot open display:
+
+You will need to unset the **SSH_ASKPASS** environment variable:
+
+    $ unsetenv SSH_ASKPASS  # For csh
+
+    $ unset SSH_ASKPASS     # For bash
+
+Once you unset the **SSH_ASKPASS** variable, you should now perform the **git
+clone** command.
+
 6. Synchronizing the Repository
 ===============================
 
