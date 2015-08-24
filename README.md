@@ -33,8 +33,8 @@ This document will walk you through the process of:
 
 * Next, you are to fill out the **Sign up** form with your information.  You
   can use any **Username** and **Password**, but we recommend that your
-  **Username** be your [Notre Dame] NetID if possible.  Likewise, we recommend 
-  that you use your [Notre Dame] email address, which will give you access to 
+  **Username** be your [Notre Dame] NetID if possible.  Likewise, we recommend
+  that you use your [Notre Dame] email address, which will give you access to
   the [unlimited academic plan].
 
     ![Bitbucket - Sign Up](http://www3.nd.edu/~pbui/teaching/cse.34331.fa15/static/img/bitbucket_signup.png)
@@ -88,7 +88,7 @@ To fork this repository, first navigate to the [cse-30331-fa15 Bitbucket]:
 
 * Once you are signed in (or if you are already signed in), [Bitbucket] will
   take you to the **Fork** dialog.  Leave the **Name** alone and enter in
-  "Assignments for _Full Name_ (_NetID_)" into the **Description** field 
+  "Assignments for _Full Name_ (_NetID_)" into the **Description** field
   (replacing _Full Name_ and _NetID_ with your name and NetID).
 
 The following two settings are very important in order for you to get credit for your work!
@@ -199,6 +199,6 @@ to do the synchronization manually, you can instead perform the following steps:
 
 * Once that is done, everytime you wish to update your local repository with
   the changes from **upstream**, you can do the following:
-  
+
         $ git fetch upstream
         $ git merge upstream/master
