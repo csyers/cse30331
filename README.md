@@ -135,27 +135,19 @@ Clone your repository onto your own computer, or into your home directory on stu
 
 Copy the command and paste it into the shell. The repository will be cloned into the directory `cse-30331-fa15` under your current working directory.
 
-If you are experiencing the following error on the student0x.cse.nd.edu machines:
+Some of you may encounter the following error on the student0x.cse.nd.edu machines:
 
     $ git clone https://dmcdomers@bitbucket.org/dmcdomers/cse-30331-fa15.git
     Initialized empty Git repository in /afs/nd.edu/user99/dmcdomers/cse-30331-fa15/.git/
 
     (gnome-ssh-askpass:7477): Gtk-WARNING **: cannot open display:
 
-You will need to unset the **SSH_ASKPASS** environment variable:
+If you get this message, there are two solutions.
 
-    $ unsetenv SSH_ASKPASS  # For csh
+- If you set your **PATH** to use the C++11 compiler as described in [Programming Environment](http://www3.nd.edu/courses/cse/cse30331.01/www/programming.html), then you will also get a new version of Git that avoids this error.
 
-Once you unset the **SSH_ASKPASS** variable, you should now be able to perform
-the **git clone** command.
-
-To permanently unset this environment variable, you can append the **unsetenv
-SSH_ASKPASS** command to your **~/.cshrc** file.
-
-If you use the **bash** shell instead of the default **csh** shell, you will
-need to perform the following command instead:
-
-    $ unset SSH_ASKPASS     # For bash
+- Alternatively, you can unset the **SSH_ASKPASS** environment variable using `unsetenv SSH_ASKPASS` (in csh/tcsh). Then `git` should run without errors. To permanently unset this environment variable, you can append the **unsetenv
+  SSH_ASKPASS** command to your **~/.cshrc** file.
 
 6. Synchronizing the Repository
 ===============================
