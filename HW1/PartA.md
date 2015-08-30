@@ -9,13 +9,21 @@ must pass the checks in step 4.
 
 *Please fill in the following so we know who you are:*
 
-- Your name:
-- Your Notre Dame NetID:
+- Your name: Christopher Syers
+- Your Notre Dame NetID: csyers
 
 Q2. A class that uses dynamically allocated memory should always
 include what three member functions (methods)? Why?
 
-*Fill in your answer here.*
+A class that uses dynamically allocated memory should always include
+a copy constructor, an overloaded assignment operator, and a destructor.
+The copy constructor and overloaded assignment operator serve a similar
+purpose. They are used so that an object of a class with dynamic memory
+is copied correctly. Instead of making copies of the pointers in one class
+to the new opbject, the copy constructor and assignment operator should
+allocate new memory for the new copy. The destructor is responsible for
+freeing dynamic memory to the heap. If one is not included, the object will
+continue to occupy heap memory, even when not in use.
 
 To submit, do:
 
