@@ -20,10 +20,13 @@ a copy constructor, an overloaded assignment operator, and a destructor.
 The copy constructor and overloaded assignment operator serve a similar
 purpose. They are used so that an object of a class with dynamic memory
 is copied correctly. Instead of making copies of the pointers in one class
-to the new opbject, the copy constructor and assignment operator should
-allocate new memory for the new copy. The destructor is responsible for
-freeing dynamic memory to the heap. If one is not included, the object will
-continue to occupy heap memory, even when not in use.
+to the new object, the copy constructor and assignment operator should
+allocate new memory for the new copy. This allows the new object to have
+the correct value, but makes sure that it is not the same value (in terms
+of memory location) as the object being copied.
+The destructor is responsible for freeing dynamic memory to the heap. If
+one is not included, the object will continue to occupy heap memory, even 
+when not in use.
 
 To submit, do:
 
