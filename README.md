@@ -33,8 +33,8 @@ This document will walk you through the process of:
 
 * Next, you are to fill out the **Sign up** form with your information.  You
   can use any **Username** and **Password**, but we recommend that your
-  **Username** be your [Notre Dame] NetID if possible.  Likewise, we recommend 
-  that you use your [Notre Dame] email address, which will give you access to 
+  **Username** be your [Notre Dame] NetID if possible.  Likewise, we recommend
+  that you use your [Notre Dame] email address, which will give you access to
   the [unlimited academic plan].
 
     ![Bitbucket - Sign Up](http://www3.nd.edu/~pbui/teaching/cse.34331.fa15/static/img/bitbucket_signup.png)
@@ -88,7 +88,7 @@ To fork this repository, first navigate to the [cse-30331-fa15 Bitbucket]:
 
 * Once you are signed in (or if you are already signed in), [Bitbucket] will
   take you to the **Fork** dialog.  Leave the **Name** alone and enter in
-  "Assignments for _Full Name_ (_NetID_)" into the **Description** field 
+  "Assignments for _Full Name_ (_NetID_)" into the **Description** field
   (replacing _Full Name_ and _NetID_ with your name and NetID).
 
 The following two settings are very important in order for you to get credit for your work!
@@ -135,6 +135,20 @@ Clone your repository onto your own computer, or into your home directory on stu
 
 Copy the command and paste it into the shell. The repository will be cloned into the directory `cse-30331-fa15` under your current working directory.
 
+Some of you may encounter the following error on the student0x.cse.nd.edu machines:
+
+    $ git clone https://dmcdomers@bitbucket.org/dmcdomers/cse-30331-fa15.git
+    Initialized empty Git repository in /afs/nd.edu/user99/dmcdomers/cse-30331-fa15/.git/
+
+    (gnome-ssh-askpass:7477): Gtk-WARNING **: cannot open display:
+
+If you get this message, there are two solutions.
+
+- If you set your **PATH** to use the C++11 compiler as described in [Programming Environment](http://www3.nd.edu/courses/cse/cse30331.01/www/programming.html), then you will also get a new version of Git that avoids this error.
+
+- Alternatively, you can unset the **SSH_ASKPASS** environment variable using `unsetenv SSH_ASKPASS` (in csh/tcsh). Then `git` should run without errors. To permanently unset this environment variable, you can append the **unsetenv
+  SSH_ASKPASS** command to your **~/.cshrc** file.
+
 6. Synchronizing the Repository
 ===============================
 
@@ -177,6 +191,6 @@ to do the synchronization manually, you can instead perform the following steps:
 
 * Once that is done, everytime you wish to update your local repository with
   the changes from **upstream**, you can do the following:
-  
+
         $ git fetch upstream
         $ git merge upstream/master
