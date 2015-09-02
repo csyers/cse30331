@@ -1,7 +1,7 @@
 Milestone 1
 ===========
 
-Due: 2015/09/03 at 11:59pm
+Due: 2015/09/10 at 11:59pm
 Points: 2
 
 1a. List the names of your team members (2-4 members including yourself).
