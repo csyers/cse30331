@@ -17,7 +17,8 @@ lists can be traversed easily both forward and backward.
 
 An advantage of a circularly-linked list is that it is easy to go back to the beginning in a loop.
 This could make implementation of something like a board game easy, where there is a loop that
-goes through all members of a the circularly linked list.
+goes through all members of a the circularly linked list. Also, you can reach any node from any 
+starting node.
 
 2. Where are the template parameters of a template visible?
 
