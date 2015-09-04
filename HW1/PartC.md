@@ -14,8 +14,5 @@ Push:
 Pop:
 Peek: 
 
-Q2: How many stacks are needed to implement a queue? Imagine that no other data structure (like arrays or linked list) is available to you. Please briefly explain how you would do it. 
-
-
-
+Q2: The STL queue is a container adapter that wraps around another underlying sequence container.  Given a choice among a vector, list, or deque, which sequence container you would choose as the underlying container for a queue, and why?
  
