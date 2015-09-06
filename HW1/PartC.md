@@ -7,12 +7,12 @@ Due 2015/09/08 at the beginning of class.
 
 Q1: Using Big-O notation, give the worst-case times for each of the following stack operations, for a stack of size N.
 
-Assuming stack is being implemented with a dynmaic array:
-Empty: Empty is O(1). It simply would compare the number of elements in stack to 0.
-Size: Size is O(1). It just returns the number of elements in the stack.
-Push: Push is O(1) worst-case time. It adds an element to the top. No shifting/indexing required.
-Pop: Pop is O(1). It just needs to remove 1 element. It does not require any shifting.
-Peek:  Peek is O(1). Regardless of size, it just returns the value of the top element.
+Assuming stack is being implemented with a linked list (also assumes a size variable is kept):
+Empty: Empty is O(1). It just looks at the size of the size variable.
+Size: Size is O(1). It just returns the number of elements in the stack, which is held in the size variable.
+Push: Push is O(1) worst-case time. It simply adds an element to the front of the list. No shifting/indexing required.
+Pop: Pop is O(1). It just needs to remove 1 element from the head of the list. It does not require any shifting.
+Peek:  Peek is O(1). Regardless of size, it just returns the value of the top element by dereferencing the top pointer.
 
 Q2: The STL queue is a container adapter that wraps around another underlying sequence container.  Given a choice among a vector, list, or deque, which sequence container you would choose as the underlying container for a queue, and why?
 
