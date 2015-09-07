@@ -22,5 +22,5 @@ a deque for this behavior. There is O(1) time complexity for insertion/deletion 
 or end of a deque, and that is the only behavior that would be present in a queue (other than the
 standard size, empty, front, and back operations). It is not easy to remove from the front of a 
 vector, so that would not be a good choice (front removal would be linear time complexity). 
-A list or a deque would do the job, but I would choose a deque because that is the standard 
-implementation.
+A list or deque would equivalent in terms of complexity, but I would choose a deque because that
+is the standard implementation. 
