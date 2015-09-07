@@ -1,7 +1,7 @@
 Homework 1 - Part D
 ===================
-Due 9/10, the beginning of the class
-(each question worthes two points)
+Due 9/10 at the beginning of class
+(each question is worth two points)
 
 **Q1:** The linked-list `node` class in the textbook (section 5.2) is _not_ designed to be used directly, 
 because it doesn't implement a copy constructor, `operator=`, or a destructor. Describe three bad things
@@ -24,15 +24,14 @@ that the following code would do:
 ([convexhull2d.c](https://developer.blender.org/diffusion/B/browse/master/source/blender/blenlib/intern/convexhull2d.c), 
 line `194`) in terms of _n_, the number of input points. Please note the following:
 
-The convex hull of a set of 2-d points is the smallest convex polygon that contains all the points. You can 
+- The convex hull of a set of 2-d points is the smallest convex polygon that contains all the points. You can 
 read more at the following two pages, but do not refer to any other source!
 
-* [Convex Hull](https://en.wikipedia.org/wiki/Convex_hull)
-* [Montone Chain](https://en.wikibooks.org/wiki/Algorithm_Implementation/Geometry/Convex_hull/Monotone_chain)
+  * [Convex Hull](https://en.wikipedia.org/wiki/Convex_hull)
+  * [Monotone Chain](https://en.wikibooks.org/wiki/Algorithm_Implementation/Geometry/Convex_hull/Monotone_chain)
 
-Assume that `qsort` (called at line `206`) takes **O(n log n)** time. `BLI_convexhull_2d()` calls `BLI_convexhull_2d_sorted()`, 
-which you also need to analyze.
+- Assume that `qsort` (called at line `206`) takes **O(n log n)** time. Then `BLI_convexhull_2d()` calls `BLI_convexhull_2d_sorted()`, 
+which you also need to analyze. Assume that all other functions take constant (**O(1)**) time. 
 
-Assume that all other functions take constant (**O(1)**) time. The answer (**O(n log n)**) is given 
-in the second link above, but you must justify your answer. In particular, your justification must explain 
-why the double loop at lines `110` and `116` doesn’t lead to an **O(n^2)** complexity.
+- The answer (**O(n log n)**) is given in the second link above, but you must justify your answer. In particular, 
+your justification must explain why the double loop at lines `110` and `116` doesn’t lead to an **O(n^2)** complexity.
