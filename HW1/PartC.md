@@ -5,7 +5,7 @@ Homework 1 - Part C
 Due 2015/09/08 at the beginning of class.
 
 
-Q1: Using Big-O notation, give the worst-case times for each of the following stack operations, for a stack of size N.
+Q1: Using Big-O notation, give the worst-case times for each of the following stack operations, for a stack of size N that is implemented using a linked list.
 
 
 Empty:
