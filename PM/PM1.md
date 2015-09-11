@@ -7,7 +7,6 @@ Points: 2
 1a. List the names of your team members (2-4 members including yourself).
 
 Mason Prosser
-Lucas Unruh
 Christopher Syers
 Tim Chang
 
