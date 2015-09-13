@@ -76,3 +76,7 @@ be classified as its worse case (O(n^2)). It only encounters the worst case if t
 cannot be the case. It can only encounter that worst case once in a while. Therefore, it would be incorrect to classify this as O(n^2),
 and instead it should be classified at O(n). It happens twice, once for the top hull and once for the bottom hull, resulting in 2n time
 complexity. This doesn't outweigh the sort operation, which is O(n log(n)). Therefore, the algorithm would be O(n log(n)). 
+
+
+
+**GRADER: 4/4**
