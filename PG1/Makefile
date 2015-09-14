@@ -12,4 +12,3 @@ measure: measure.c
 
 clean:
 	rm -rf calc[0-4] measure *.exe *.o *.dSYM *~ gmon.out
-
