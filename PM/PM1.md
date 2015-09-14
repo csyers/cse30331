@@ -35,3 +35,5 @@ always listened to MP3s. Although the market may be small, I think
 there is a place in the world for lossless audio. I think it would 
 be interesting to discover a compression algorithm works, especially 
 one that is so complicated and lossless. 
+
+**GRADER: 2/2**
