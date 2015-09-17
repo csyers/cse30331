@@ -16,8 +16,10 @@ B. False
 C. It depends
 
 The answer is (A), true. Insertion sort, when the input array is already sorted, is O(n), because 
-each insertion of a new element will only examine a single element from the array. So that results 
+each insertion of a new element will only make one comparison for each element in the array. So that results 
 in about n operation, as opposed to O(n^2) in average and worst case complexity of the insertion 
 sort. On the other hand, selection sort is always O(n^2). The selection sort has a best, worst, and 
 average complexity of O(n^2). It performs the same number of operations no matter what the values 
-are in the array that it sorts.
+are in the array that it sorts, because it must first find the min of the unsorted portion. Even 
+if the list was sorted, you would have to look through the whole unsorted part to guarentee that 
+a certain element is the minimum.
