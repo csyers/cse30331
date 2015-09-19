@@ -1,5 +1,7 @@
 Homework 2 - Part D
 ===================
+Due 2015/09/24 at 9:30am. 2 points each question.
+
 Q7. What sorting algorithm(s) would you use in the following physical situations, and why? Choose from among the sorting algorithms we’ve learned (but if you want to get creative, you can look for other algorithms as well).
 Sorting a hand of 7 playing cards by increasing number (A, 2, …, 10, J, Q, K)
 Sorting 100 tigers in 100 cages alphabetically by name
