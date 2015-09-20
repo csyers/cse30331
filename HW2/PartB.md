@@ -23,3 +23,9 @@ average complexity of O(n^2). It performs the same number of operations no matte
 are in the array that it sorts, because it must first find the min of the unsorted portion. Even 
 if the list was sorted, you would have to look through the whole unsorted part to guarentee that 
 a certain element is the minimum.
+
+
+
+**GRADER: **
+**GRADER: 2/2**
+
