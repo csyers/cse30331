@@ -1,5 +1,7 @@
 Homework 2 - Part D
 ===================
+Due 2015/09/24 at 9:30am. 2 points each question.
+
 
 Q7. What sorting algorithm(s) would you use in the following physical situations, and why? Choose from among the sorting algorithms we’ve learned (but if you want to get creative, you can look for other algorithms as well).
 
@@ -20,7 +22,7 @@ where
 - `cmp(x, y, thunk)` is a function that returns -1 if x < y, +1 if x > y, and 0 if x == y,
 - `thunk` can be ignored.
 
-Please answer two of the following questions (your choice).
+Please answer **two** of the following questions (your choice).
 
 - If there are fewer than 7 elements, a different sorting algorithm is used (lines 102-112). What is it, and why is it used?
 The pivot element (pm) is selected in lines 113-124. There are three cases: n = 7, 7 < n <= 40, and 40 < n. What’s going on in each of these cases, and why?
