@@ -21,3 +21,9 @@ D. This can never happen (violates the precondition).
 (A). The implementation decides which one to remove. This is on page 546 of the textbook, where it says "If there are several equally 
 high priorities, the implementation may decide which one to return." The only post-condition is that the heap remains a heap after the 
 operation, which would be true no matter what element is returned. So it is up to the implementation.
+
+
+
+**GRADER: **
+**GRADER: 2/2**
+
