@@ -30,12 +30,15 @@ B. Merge sort is usually implemented recursively.
 C. The worst-case performance for merge sort is O(n log n).
 D. Merge sort is especially useful on files that have a size that is a power of 2.
 
-(A) is false. The statement should say that it is usually used as an external sorting 
-algorithm. It requires the use of a temporary array, which would have to be allocated 
-and freed, so it is not ideal for sorting arrays. It does lend well to sorting large 
-programs, so it is usually used as an external sorting algorithm. This does not mean 
-that is cannot be used as an internal sorting algorithm, however. So (A) is false 
-because it is not only used as an external sorting algorithm.
+(A) is false. There are other uses for the mergesort alogrithm. For one, it is a stable 
+sort, meaning that elements with the same index are going to stay in the order they came 
+in. Quicksort, on the other hand, is not stable. So this could be an important use of 
+the mergesort that is not necessarily external. Another advantage that mergesort can 
+provide is that it is always log(n log n), whereas quicksort can degrade to log(n^2). 
+This happens when the pivots are poorly picked. So if space is not a consideration, mergesort 
+could advantageous to use as a non-external sort. A third reason is that the mergesort does 
+not need the extra space for sorting linked lists. So it is usually used to sort linked lists. 
+This is because mergesort gets data sequentially, whereas quicksort needs random access. 
 
 (B) is true. Mergesort is a recursive sorting algorithm.
 
