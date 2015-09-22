@@ -24,11 +24,11 @@ overall steps for all divide and conquer algorithms, like quicksort and mergesor
 The more specific steps are listed above.
 
 
-6. Which of these statements is NOT true of mergesort and its variations?
-A. Merge sort is only used as an external sorting algorithm. 
+6. Which of these statements is/are NOT true of mergesort and its variations? More than one statement may be false.
+A. Merge sort is normally only used for external sorting. 
 B. Merge sort is usually implemented recursively. 
 C. The worst-case performance for merge sort is O(n log n).
-D. Binary merge sort is used on subfiles that have a size that is a power of 2.
+D. Merge sort is especially useful on files that have a size that is a power of 2.
 
 (A) is false. The statement should say that it is usually used as an external sorting 
 algorithm. It requires the use of a temporary array, which would have to be allocated 
@@ -48,4 +48,3 @@ sorting arrays. It does lend well to sorting large programs, so it is usually us
 as an external sorting algorithm. This does not mean that is cannot be used as an 
 internal sorting algorithm, however. So (A) is false because it is not only used 
 as an external sorting algorithm.
-
