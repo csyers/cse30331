@@ -41,10 +41,5 @@ because it is not only used as an external sorting algorithm.
 
 (C) is true. Mergesort is always O(n log n)
 
-(D) is true. Although binary merge sort is not(A) is false. The statement should say 
-that it is usually used as an external sorting algorithm. It requires the use of a 
-temporary array, which would have to be allocated and freed, so it is not ideal for 
-sorting arrays. It does lend well to sorting large programs, so it is usually used 
-as an external sorting algorithm. This does not mean that is cannot be used as an 
-internal sorting algorithm, however. So (A) is false because it is not only used 
-as an external sorting algorithm.
+(D) is true. Although binary merge sort is not mentioned in the book, it seems like it 
+would lend itself well to work with thing of powers of 2, because binary is in the name.
