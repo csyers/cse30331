@@ -10,13 +10,17 @@ would choose this algorithm because it is simple, and works well with a small nu
 as sorted, then take the next card and insert it into the appropriate place in the sorted portion of the hand. This would be quick and easy to execute.
 - Sorting 100 tigers in 100 cages alphabetically by name: I would choose to sort the tigers using selection sort. This is because selection sort only 
 requires O(n) swaps, which is fewer than the other sorting algorithms. I would want to minimize swaps because I can imagine that switching tigers from 
-cage to cage could be difficult.
+cage to cage could be difficult. Presubably, the zookeeper would know the order of them. So he would just take the first one and put it in the right 
+cage, then continue on for all tigers.
 - Sorting 10,000 US coins by increasing value: to sort these, I would use bucket sort. This is because there are few district values within the 10,000 coins. There are pennies, nickels, dimes, quarters, half-dollars, and dolalr coins, which means there are only 6 different dstinct values the elements can take. Bucket sort is a sorting algorithm that takes an average time on O(n + k), where k is in the number of buckets. In this case, k would be 6. 
 This results in an efficient sorting of the 10,000 coins. This is actually what I'd do in real life: I would take each coin and place it in a bucket 
-with the other coins of that value. 
+with the other coins of that value. If I had to choose an in class algorithm, I would use insertion sort, taking each coin 1 by 1 and inserting it into 
+the correct position amongst the sorted coins.
 
 I would not choose to use heapsort for any of these cases, because it would be difficult to heapify and reheapify physical objects. 
-
+Also, I chose not to use any recursive algorithm, because as Professor Chiang said in class on Tuesday, recursion is very difficult 
+for humans to think of. So although using quicksort might be best for sorting the tigers, I would not choose to do that because of its 
+diffulty to implemenet.
 
 
 
