@@ -61,7 +61,7 @@ it will reduce the change of getting a bad pivot, which would be very costly wit
 
 The algorithm switches to an insertion sort when swap_cnt is equal to 0. This only happens if no switches are done while doing the quicksort. The 
 program switches the pivot point to the beginning of the array, then sets two pointers to the second element and the end element. It then proceeds to 
-go through each element, comparing it with the pivot. If non of the elements are in the wrong portion of the array (and none are equal to the pivot), 
+go through each element, comparing it with the pivot. If none of the elements are in the wrong portion of the array (and none are equal to the pivot), 
 then swap_cnt would be 0. It switches to an insertion sort because the array is likely small and almost sorted when no swaps are made. Insertion sort 
 is efficient for short, almost sorted arrays, so that is why it is done.
 
