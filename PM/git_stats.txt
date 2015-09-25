@@ -1,0 +1,37 @@
+('temp-linecount-repo' will be deleted automatically)
+
+
+     100 files     200 files     300 files     400 files     500 files     600 files     700 files     800 files     822 text files.
+classified 817 filesDuplicate file check 817 files (796 known unique)Unique:      100 files                                          Unique:      200 files                                          Unique:      300 files                                          Unique:      400 files                                          Unique:      500 files                                          Unique:      600 files                                          Unique:      700 files                                               814 unique files.                              
+Counting:  100Counting:  200Counting:  300Counting:  400Counting:  500Counting:  600Counting:  700Counting:  800     144 files ignored.
+
+http://cloc.sourceforge.net v 1.60  T=4.02 s (178.3 files/s, 90054.5 lines/s)
+-------------------------------------------------------------------------------
+Language                     files          blank        comment           code
+-------------------------------------------------------------------------------
+C++                            285          19938          15573         136535
+XML                            138           2177           1541         107862
+C/C++ Header                   225           6519           7510          29439
+HTML                            12           1476             78          18692
+Objective C++                    5           1207           1310           4958
+Python                          20            565            332           3872
+make                             6            108             89            408
+DOS Batch                        7             77             29            320
+IDL                              3             39              0            282
+SQL                              1             36             16            163
+CMake                            1             22             11            149
+C                                1              9              5             72
+Bourne Shell                     1             11             12             43
+D                                1              2              8             37
+ASP                              1              0              0             12
+Teamcenter def                   2              0              0              8
+Ruby                             1              0              0              6
+Visual Basic                     1              0              3              6
+PHP                              1              0              1              5
+ASP.Net                          1              0              0              5
+Perl                             1              0              0              5
+Lua                              1              0              2              5
+Objective C                      1              2              8              5
+-------------------------------------------------------------------------------
+SUM:                           716          32188          26528         302889
+-------------------------------------------------------------------------------
