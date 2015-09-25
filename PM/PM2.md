@@ -36,7 +36,8 @@ program. It reveals that there are over 300,000 lines of code in the project, mo
 which (130k) being C++. The other most popular languages are XML and C/C++ header files. 
 
 Notepad++ is written exclusively for windows. In terms of external libraries, it depends 
-on Win32 API, and STL. As far as I know, those are the most important external libraries. 
+on Win32 API, and STL. It also has a list of external dependencies listed in Visual Studio, 
+which include algorithm, assert, cmath, and other C libraries.
 
 2b. You should also be able to successfully compile and run your
 chosen application.
@@ -50,4 +51,19 @@ plan to overcome them. What errors do you get? Are there tests to help
 you verify you have it working correctly? Have you contacted the
 software's development team? Have you met with TAs?
 
+The environment in which I will do my developement is in 2015 Visual 
+Studio Community Visual C++ environment. This is the IDE recommended 
+by the Notepad++ community. The compiler is g++, I believe. It will 
+be done on my windows 7 machine. 
 
+In an attempt to build, it did not quite work. There was an error message 
+about a missiling .dll file called SciLexer.dll. After trying for a while 
+to build this dll and put it in the right place, the same error message 
+continued to appear. It says "SCINTILLA ERROR: cannot load dynamic libarary". 
+The next steps are to continue to look at other people with similar problems, 
+and change things around until it can link to the dynmaic library. 
+
+The build was indeed successful, as indicated by Visual Studio. The executable 
+could not be run, however, because of the dll problem. The test to verify 
+that it built correctly is to simply get the text editor up and running, instead 
+of getting the .dll linking error.
