@@ -25,4 +25,4 @@ distance5: distance5.cpp location.h
 	g++ $(XXFLAGS) distance5.cpp -o $@
 
 clean:
-	rm -f measure distance1 distance2 distance3 distance4a distance4b distance5
+	rm -f measure distance1 distance2 distance3 distance4a distance4b distance5 *.output *.error *.log *.submit
