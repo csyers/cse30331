@@ -12,8 +12,8 @@
 #include <fstream>	// for reading file
 #include <vector>
 #include <list>
-#include <cmath>	// for M_PI
 #include <algorithm>	// for sort
+
 using namespace std;
 
 // read_file

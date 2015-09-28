@@ -1,8 +1,9 @@
 // Christopher Syers	CSE30331	PG2
 // October 1, 2015	distance2.cpp
 //
-// program that takes in one argument, which is a file containing 
-// latitude and longitude coordinates of vairous points of interest
+// program that takes in three arguments: a file to use a database,
+// and the user's current location. prints out distances from all 
+// POI foundi n the database using location object's calc_distance function
 
 #include "location.h"
 #include <iostream>
@@ -11,7 +12,6 @@
 #include <fstream>	// for reading file
 #include <vector>
 #include <list>
-#include <cmath>	// for M_PI
 
 using namespace std;
 

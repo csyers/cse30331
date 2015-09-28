@@ -2,7 +2,7 @@
 // October 1, 2015	distance4a.cpp
 //
 // program that sorts and prints the distance of locations from a given
-// location using a std::list
+// location using a std::list, and std::list::sort
 
 #include "location.h"
 #include <iostream>
@@ -11,8 +11,8 @@
 #include <fstream>	// for reading file
 #include <vector>
 #include <list>
-#include <cmath>	// for M_PI
 #include <algorithm>	// for sort
+
 using namespace std;
 
 // read_file
@@ -63,7 +63,7 @@ int main(int argc, char *argv[]){
 	for(iterator = locs.begin(); iterator != locs.end(); iterator++){
 		iterator->calc_distance(my_loc);			// loop through and run calc_distance with each location
 	}
-	locs.sort();		// sort the locations by distance
+	locs.sort();		// sort the locations by distance by using std::list::sort
 	for(iterator = locs.begin(); iterator != locs.end(); iterator++){
 		iterator->print_distance();	// loop through and print all of the distances
 	}

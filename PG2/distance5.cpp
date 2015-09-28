@@ -1,8 +1,9 @@
 // Christopher Syers	CSE30331	PG2
-// October 1, 2015	distance3.cpp
+// October 1, 2015	distance5.cpp
 //
 // program that sorts and prints distances from a given location
-// using a vector
+// using a vector, and q_sort, which is a simple implementation of 
+// a quicksort algorithm
 
 #include "location.h"
 #include <iostream>
@@ -11,11 +12,15 @@
 #include <fstream>	// for reading file
 #include <vector>
 #include <list>
-#include <cmath>	// for M_PI
 #include <algorithm>	// for sort
+
 using namespace std;
 
-void q_sort(vector<location>&,int,int);
+// quicksort function
+template <typename T>
+void q_sort(vector<T>&,int,int);
+// parition function used in q_sort
+template <typename T>
 int partition(vector<location>&,int,int);
 
 // read_file
@@ -66,13 +71,20 @@ int main(int argc, char *argv[]){
 	for(iterator = locs.begin(); iterator != locs.end(); iterator++){
 		iterator->calc_distance(my_loc);			// loop through and run calc_distance with each location
 	}
-	q_sort(locs,0,locs.size());		// sort the locations by distance
+	q_sort(locs,0,locs.size());		// sort the locations by distance using q_sort
 	for(iterator = locs.begin(); iterator != locs.end(); iterator++){
 		iterator->print_distance();	// loop through and print all of the distances
 	}
 }
 
-void q_sort(vector<location> &v, int begin, int end){
+// function: q_sort
+// simple implementation of the quicksort algorithm, using a Lomuto parititon
+// parameters: vector<location> v contains the elements to be sorted. begin is the element
+// to begin at, and end is one index after the last element to be sorted
+// preconidtion: < operator overlaoded for type T
+// postconidtion: vector is now in sorted order
+template <typename T>
+void q_sort(vector<T> &v, int begin, int end){
 	int pivot;
 	if (begin < end){			// repeat until the begin is equal to end (1 element)
 		pivot = partition(v,begin,end);	// partition the vector and get the pivot posiition
@@ -81,21 +93,26 @@ void q_sort(vector<location> &v, int begin, int end){
 	}
 }
 
-int partition(vector<location> &v, int begin, int end){
-	location p = v[begin];		// sets pivot to first element
-	int i = begin;	
-	int j;
-	location temp;			// temp variable for switching
-	for(j=i+1; j < end; j++){
-		if(v[j] < p){
-			i++;
+// function: partition
+// partition portion of the quicksort algorithm - implemented using Lomuto parition
+// precondition: < operator overloaded fro type T
+// postcondition: returned value is the position of the pivot position after partition
+template <typename T>
+int partition(vector<T> &v, int begin, int end){
+	T p = v[begin];			// sets pivot to first element: naive approach but it works fine
+	int i = begin;			// sets index i to the first element to sort
+	int j;			
+	T temp;				// temp variable for switching
+	for(j=i+1; j < end; j++){	// j is set to element after i, containue until the end
+		if(v[j] < p){		// if j points to a value smaller than pivot,
+			i++;		// move i
 			temp = v[j];	// swap the variables
-			v[j] = v[i];
+			v[j] = v[i];	
 			v[i] = temp;
 		}
 	}
-	temp = v[i];
+	temp = v[i];		// swap the pivot with the current position of i
 	v[i] = v[begin];
 	v[begin] = temp;
-	return i;
+	return i;		// return i, which is now the pivot value
 }

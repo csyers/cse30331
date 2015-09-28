@@ -2,7 +2,7 @@
 // October 1, 2015	distance3.cpp
 //
 // program that sorts and prints distances from a given location
-// using a vector
+// using a vector and std::sort
 
 #include "location.h"
 #include <iostream>
@@ -11,8 +11,8 @@
 #include <fstream>	// for reading file
 #include <vector>
 #include <list>
-#include <cmath>	// for M_PI
 #include <algorithm>	// for sort
+
 using namespace std;
 
 // read_file

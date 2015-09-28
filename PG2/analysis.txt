@@ -1,31 +1,51 @@
 -----------------
-ANALYSIS - Sun Sep 27 23:39:13 EDT 2015
+ANALYSIS - Mon Sep 28 16:26:45 EDT 2015
 -----------------
 distance3
 ---------
-11.944183 seconds	90.718750 Mbytes
-13.209991 seconds	90.718750 Mbytes
-12.983025 seconds	90.718750 Mbytes
-11.903190 seconds	91.105469 Mbytes
-13.219989 seconds	91.078125 Mbytes
+12.116157 seconds	91.449219 Mbytes
+11.872195 seconds	91.664062 Mbytes
+11.948182 seconds	90.718750 Mbytes
+12.076163 seconds	90.718750 Mbytes
+11.855197 seconds	91.042969 Mbytes
 distance4a
 ----------
-13.761907 seconds	121.695312 Mbytes
-13.155999 seconds	121.695312 Mbytes
-11.809204 seconds	121.695312 Mbytes
-13.291978 seconds	121.699219 Mbytes
-12.361120 seconds	121.699219 Mbytes
+12.007174 seconds	121.699219 Mbytes
+12.098159 seconds	121.695312 Mbytes
+12.367119 seconds	121.695312 Mbytes
+12.104159 seconds	121.695312 Mbytes
+11.876194 seconds	121.695312 Mbytes
 distance4b
 ----------
-13.932880 seconds	152.644531 Mbytes
-13.011021 seconds	152.652344 Mbytes
-13.019020 seconds	152.652344 Mbytes
-14.549787 seconds	152.648438 Mbytes
-12.703067 seconds	152.652344 Mbytes
+12.464104 seconds	152.648438 Mbytes
+12.557090 seconds	152.648438 Mbytes
+12.587086 seconds	152.644531 Mbytes
+12.753060 seconds	152.652344 Mbytes
+12.670073 seconds	152.652344 Mbytes
 distance5
 ---------
-14.749757 seconds	90.718750 Mbytes
-15.041713 seconds	90.714844 Mbytes
-17.151390 seconds	90.718750 Mbytes
-14.219837 seconds	90.718750 Mbytes
-13.919883 seconds	90.714844 Mbytes
+13.355969 seconds	90.714844 Mbytes
+13.482949 seconds	90.718750 Mbytes
+13.410960 seconds	91.007812 Mbytes
+13.528943 seconds	90.714844 Mbytes
+13.338971 seconds	91.695312 Mbytes
+
+distance3
+---------
+time average: 	11.9735788 seconds
+space average:	91.11875 Mbytes
+
+distance4a
+---------
+time average:	12.090561 seconds
+space average:	121.6960934 Mbytes
+
+distance4b
+---------
+time average: 	12.6062826 seconds
+space average:	152.649219 Mbytes
+
+distance5
+--------
+time average:	13.4235584 seconds
+space average:	90.9703124 Mbytes
