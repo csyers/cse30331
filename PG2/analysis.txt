@@ -1,0 +1,31 @@
+-----------------
+ANALYSIS - Sun Sep 27 22:53:37 EDT 2015
+-----------------
+distance3
+---------
+13.499947 seconds	90.718750 Mbytes
+11.846198 seconds	90.722656 Mbytes
+11.972179 seconds	90.722656 Mbytes
+11.630231 seconds	90.980469 Mbytes
+11.861195 seconds	90.859375 Mbytes
+distance4a
+----------
+12.786055 seconds	121.695312 Mbytes
+12.099160 seconds	121.695312 Mbytes
+13.607931 seconds	121.695312 Mbytes
+12.575087 seconds	121.699219 Mbytes
+12.353121 seconds	121.695312 Mbytes
+distance4b
+----------
+12.724065 seconds	152.648438 Mbytes
+12.954029 seconds	152.648438 Mbytes
+12.598084 seconds	152.648438 Mbytes
+12.746062 seconds	152.648438 Mbytes
+13.844895 seconds	152.648438 Mbytes
+distance5
+---------
+13.612929 seconds	90.855469 Mbytes
+14.479798 seconds	90.710938 Mbytes
+15.052711 seconds	90.714844 Mbytes
+14.385812 seconds	90.718750 Mbytes
+14.488796 seconds	91.726562 Mbytes

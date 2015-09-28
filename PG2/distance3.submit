@@ -1,0 +1,12 @@
+universe     = vanilla
+executable   = ./measure
+arguments    = ./distance3 osmpoi.txt 41.7031036 -86.2391732
+output	     = distance3.output
+error        = distance3.error
+log	     = distance3.log
+getenv	     = true
+requirements = regexp("d16copt.*", Name, "i")
+transfer_input_files	= measure,distance3,osmpoi.txt
+should_transfer_files	= yes
+when_to_transfer_output = on_exit
+queue
