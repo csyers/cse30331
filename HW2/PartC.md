@@ -46,3 +46,7 @@ This is because mergesort gets data sequentially, whereas quicksort needs random
 
 (D) is true. Although binary merge sort is not mentioned in the book, it seems like it 
 would lend itself well to work with thing of powers of 2, because binary is in the name.
+
+**GRADER: D is false -- non-powers of two are fine.**
+
+**GRADER: 2/2**

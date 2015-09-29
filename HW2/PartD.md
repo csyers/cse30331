@@ -70,3 +70,5 @@ r would be equal to 0 when an element is the same value as the pivot. When this 
 swapped with the end or beginning element. It then increments or decrements the current "end" or "beginning" of the array. Esentially, it pushes all 
 of the elements equal to the pivot to the beginning of the array or to the end of the array. I am not sure why it would do this. Perhaps it is so that 
 is more likely to be picked as a pivot in a future iteration of the algorithm.
+
+**GRADER: 4/4**
