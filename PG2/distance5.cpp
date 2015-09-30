@@ -99,10 +99,14 @@ void q_sort(vector<T> &v, int begin, int end){
 // postcondition: returned value is the position of the pivot position after partition
 template <typename T>
 int partition(vector<T> &v, int begin, int end){
-	T p = v[begin];			// sets pivot to first element: naive approach but it works fine
+	int mid = (begin + end) / 2;	// calculate middle of the arrray
+	T p = v[mid];			// sets pivot to first element: naive approach but it works fine
 	int i = begin;			// sets index i to the first element to sort
 	int j;			
 	T temp;				// temp variable for switching
+	temp = v[mid];			// switch pivot element to beginning of the array
+	v[mid] = v[begin];
+	v[begin] = temp;
 	for(j=i+1; j < end; j++){	// j is set to element after i, containue until the end
 		if(v[j] < p){		// if j points to a value smaller than pivot,
 			i++;		// move i
