@@ -19,3 +19,8 @@ The binary search tree with those numbers would be:
 			5
 
 The depth of the tree is 3, because the element 5 is 3 nodes away from the root node, which is 10. I am not sure whether the root node is inlucded in the root-to-leaf number. Including the root, the longest root-to-leaf path is 4 (10 -> 1 -> 3 -> 5), and not including the root, it would be 3.
+
+
+
+**GRADER: **
+**GRADER: 2/2**
