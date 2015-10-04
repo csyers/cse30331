@@ -15,3 +15,8 @@ Q4: Consider a B-tree in which the maximum number of entries in a node is 4. Wha
 
 If the maximum number of entries in a node is 4, then the minimum number of entries in a node would be 2. The minimum is simply half 
 of the maximum. This is rule 1 of the B-tree: every node except the root has at least minimum entries.
+
+
+
+**GRADER: **
+**GRADER: 2/2**
