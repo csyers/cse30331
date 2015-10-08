@@ -2,6 +2,8 @@ Homework 3 - Part D
 ===================
 Q7. When inserting a single new value into a red-black tree, what is the worst-case number of rotations and the worst-case number of color flips that have to be performed? Use big-O in terms of n, the number of elements in the tree, and briefly justify your answer.
 
+Wrost-case number of rotations for an insert is O(1). This is because when you insert a node and rotation is required, the root of that node (the black node above the new node you insert) must remain black after a rotation. Therefore, a rotation cannot propogate up through the levels of the tree. Either 1 or 2 rotations is needed, as the third page of the handout suggests. Color flips can propogate upward to the root of a red-black tree. Therefore, the worst-case number of color flips would be O(log n). This is the case where a color flip continues to overfill nodes, so the color flip might have to go all the way up through the height of the tree, which is, which is related to log(n).
+
 Q8. Have a glance at http://j.mp/blensearch. The core of this function is basically searching through a sequence of floats, trying to find the place where the sequence changes sign (i.e., from positive to negative or negative to positive). The left-hand version uses binary search, but it had a bug, so it was reverted back to the right-hand version, which uses linear search.
 
 (For the curious: this module’s job is to cover the surface of a 3-d object with triangles for the purposes of rendering it, and this function’s job is to start by locating a tiny cube that intersects the object’s surface. The object is defined by an equation of the form f(x,y,z) = 0, so the points where f changes sign lie on the surface.)
