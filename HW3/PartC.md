@@ -16,3 +16,8 @@ Searching in a binary search tree is O(log n). This is because it is simply a
 BST, which has an average case of O(log n), but because a red-black tree is 
 always nearly balanced, its worst-case running time for seartch is O(log n).
 
+
+
+
+**GRADER: **
+**GRADER: 2/2**
