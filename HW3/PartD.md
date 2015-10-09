@@ -61,3 +61,8 @@ int find_sign_change_binary (const vector<float> &v) {
 There are at least two bugs in find_sign_change_binary. Find one of them and explain how to fix it.
 
 One bug in this code is that it does not account for the array of floats being in random order. For example, if the vector contained the elements <-1, 1, 2, 3, 2, 1, -1>, there is cleary a sign change between v[0] and v[1]. However, the binary search starts by looking at the first and last element, which in this case have the same sign. The resuling coperation (a*b would be greater than 0.0, which would result in a return value of -1. This is not consistent with the module's postcondition. In order to fix this, a pre-condition would have to be that the vector is in sorted order. If the order of the original vector must be preserved, there is no fix in the binary search for this. The implementation must be changed to a linear search, or another search that does not require a sorted vector.
+
+
+
+**GRADER: **
+**GRADER: 4/4**
