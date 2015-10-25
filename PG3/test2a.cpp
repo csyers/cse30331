@@ -91,7 +91,6 @@ int main (int argc, char *argv[]) {
   test_equal(result.size(), 0);
 
   cout << endl;
-
   cout << "Testing copy constructor" << endl;
   quadtree qt1(qt);
   cout << "qt1.within_radius(point(41.7031036, -86.2391732), 0.2, result);" << endl;
@@ -113,7 +112,6 @@ int main (int argc, char *argv[]) {
   if (result.size() >= 3) test_equal(result[2], "North Dining Hall");
 
   cout << endl;
-
   if (failures == 1)
     cout << "One test did not pass." << endl;
   else if (failures)
