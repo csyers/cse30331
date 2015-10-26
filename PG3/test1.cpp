@@ -101,9 +101,10 @@ int main (int argc, char *argv[]) {
   if (result.size() >= 2) test_equal(result[1], "Sorin's (Morris Inn)");
 
   cout << "Testing copy assignment" << endl;
-  bt = bt1;
-  cout << "bt.within_radius(-86.2391732, 0.001, result);" << endl;
-  bt1.within_radius(-86.2391732, 0.001, result);
+  bintree bt2;
+  bt2 = bt1;
+  cout << "bt2.within_radius(-86.2391732, 0.001, result);" << endl;
+  bt2.within_radius(-86.2391732, 0.001, result);
   sort(result.begin(), result.end());
   test_equal(result.size(), 2);
   if (result.size() >= 1) test_equal(result[0], "Rohr's (Morris Inn)");
