@@ -49,3 +49,9 @@ produce the same hash value, because otherwise the hash function would not be de
 
 Property c is not necessary, but it is ideal, because it allows for easy implementation 
 when accessing the array that hold the records.
+
+
+
+
+**GRADER: **
+**GRADER: 2/2**
