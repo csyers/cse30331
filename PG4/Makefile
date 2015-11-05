@@ -17,5 +17,5 @@ geocode: geocode.cpp street_map.cpp street_map.hpp
 measure: measure.c
 	$(CC) $< -o $@
 clean:
-	rm -rf test1 test2 measure *.exe *.o *.dSYM gmon.out *~
+	rm -rf test1 test2 geocode measure *.exe *.o *.dSYM gmon.out *~
 
