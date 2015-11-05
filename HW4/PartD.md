@@ -21,3 +21,4 @@ Q8. In class, we did a simplified complexity analysis of bucket sort, assuming t
 - the hash table uses separate chaining (bucket sort always uses separate chaining) where the buckets are linked lists
 - the inner sort is O(n^2) and is in-place (it’s commonly insertion sort)
 
+The time comlexity of bucket sort is O(n + m). This is because there is a
