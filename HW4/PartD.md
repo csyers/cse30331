@@ -46,3 +46,11 @@ The total complexity can then be viewed as O(n + m + (nm^2 + mn^2 - mn)/m^3). Th
 the comlexity should be n^2. In the above case it is, becuase the last term becomes O(n^2). When m dominates, then it becomes O(m), 
 which is right because it has to go through all of the buckets at the end to construct the array. When n dominates and k is suficiently 
 large (there are enough buckets), then the sort is O(n). 
+
+
+
+
+
+**GRADER: Q8: Time complexity: O(n (1+n/m)), Space complexity: O(m+n) additional space
+Score of HW 7 will not be shown up here, but will show up on Sakai with HW4 soon. So the point shown below only reflects your Q8 score**
+**GRADER: 1/2**
