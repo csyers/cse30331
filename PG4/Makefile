@@ -3,7 +3,7 @@ CC=gcc
 all: test1 test2 geocode measure 
 CXXFLAGS=-std=c++11
 
-all: test1 test2 measure
+all: test1 test2 measure geocode
 
 test1: test1.cpp street_map.cpp street_map.hpp
 	$(CXX) $(CXXFLAGS) $< street_map.cpp -o $@
@@ -11,8 +11,8 @@ test1: test1.cpp street_map.cpp street_map.hpp
 test2: test2.cpp street_map.cpp street_map.hpp
 	$(CXX) $(CXXFLAGS) $< street_map.cpp -o $@
 
-geocode: geocode.cpp street_map.cpp street_map.hpp
-	$(CXX) $(CXXFLAGS) $< street_map.cpp -o $@
+geocode: geocode.cpp street_map.cpp street_map.hpp side.hpp segment.hpp
+	$(CXX) $(CXXFLAGS) $< street_map.cpp side.hpp segment.hpp -o $@
 
 measure: measure.c
 	$(CC) $< -o $@

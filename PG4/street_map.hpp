@@ -2,6 +2,10 @@
 #define STREET_MAP_HPP
 
 #include <string>
+#include <unordered_map>
+#include <vector>
+#include "side.hpp"
+#include "segment.hpp"
 
 class street_map {
 
@@ -31,7 +35,7 @@ private:
 
   // The main data structure must have a type of the form:
   //   std::unordered_map<side, ...> 
-
+	std::unordered_map<side,std::vector<segment>,boost::hash<side>> data;
 };
 
 
