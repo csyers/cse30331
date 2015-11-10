@@ -29,13 +29,13 @@ public:
 
   bool geocode(const std::string &address, std::string &url) const;
 
-private:
+//private:
 
   // Add any other member variables and functions you want.
 
   // The main data structure must have a type of the form:
   //   std::unordered_map<side, ...> 
-	std::unordered_map<side,std::vector<segment>,boost::hash<side>> data;
+	std::unordered_map<side,std::vector<segment>,boost::hash<side>> data;	// unordered map with side as keys and a vector of segments as value
 };
 
 

@@ -1,7 +1,7 @@
 CXX=g++
 CC=gcc
 all: test1 test2 geocode measure 
-CXXFLAGS=-std=c++11
+CXXFLAGS=-std=c++11 -O3
 
 all: test1 test2 measure geocode
 
