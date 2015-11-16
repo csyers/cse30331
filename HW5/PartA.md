@@ -30,3 +30,10 @@ Q2:    Below is a graph represented as an adjacency matrix. Does it have any loo
 3 | F | F | T | F
 
 Yes, there are loops. Vertex 0 loops to itself, and so does vertex 2.
+
+
+
+
+
+**GRADER: **
+**GRADER: 2/2**
