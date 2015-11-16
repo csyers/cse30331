@@ -1,6 +1,6 @@
 #!/bin/sh
 
-if [ -x `which valgrind` ]; then
+if [ -x valgrind ]; then
 
 if valgrind --error-exitcode=1 --leak-check=yes ./test1; then
   echo "Valgrind: PASSED"
