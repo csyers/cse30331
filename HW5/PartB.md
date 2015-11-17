@@ -18,3 +18,9 @@ Q4: Given two vertices in a graph s and t, which of the two traversals (BFS and 
 
 (C). Both types of traversals can be used to find if there is a path. You would simply start either search at s, and then see if t is 
 marked at the end of the traversal.
+
+
+
+
+**GRADER: **
+**GRADER: 2/2**
