@@ -15,3 +15,10 @@ Q6: In Dijkstra’s algorithm, what is the initial value of the distance of each
 The initial value of all of the distances execept the starting vertex is infinity, or some other sentinel value that indicates 
 that there is no way to get to that vertex. These would be gradually replaced as the algorithm progresses, but they must start 
 at infinity of some value that indicates that it is not valid yet.
+
+
+
+
+
+**GRADER: **
+**GRADER: 2/2**
