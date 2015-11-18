@@ -5,13 +5,21 @@ Due 2015/11/19 at the beginning of class. 2 points each question.
 Q7. If you run Dijkstra's algorithm on a graph whose edge weights are
 all +1, what would it be equivalent to? Explain.
 
-
+This would be equivalent to a BFS. The neighbors of the start vertex will be added to the priority queue with 
+priority 1, so one of those will be selected for the next iteration. All neightbors of that node would be added 
+to the queue with priority 2. So none of those would be selected out of the queue until all the neighbors of a 
+were processed. This esentially makes the priority queue act as a regular queue, so the traversal would be a BFS.
 
 
 If you run Dijkstra's algorithm on a graph whose edge weights are all
 -1, what would it be equivalent to? Explain.
 
-
+This would result in a DFS. This is because once you start down a path, that same path will always be the lowest 
+priority in the queue, so it will act like a stack. For example, if there is a graph with edges A->B, B->D, A->C, and 
+C->D, starting a search from A would result in the prioriy queue containing B:-1 and C:-1 in the first pass, then 
+randomly choosing B would have C:-1 and D:-2 in the queue. Then, D would be selected, and so C:-3 and C:-1 would be 
+in the queue. Then C:-3 would be placed in the marked vector. This is equivalent to DFS. The weights would be incorrect, 
+because they have to be non-negative to ensure that the priorities would represent the shorest distance.
 
 
 Q8. Makefiles can be viewed as graphs of dependencies.  For instance,

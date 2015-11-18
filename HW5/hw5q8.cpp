@@ -48,11 +48,17 @@ void read_makefile(const string& filename, graph<Node>& g, bool directed) {
 	trim_string(sources);
 
 	// TODO: Add node
+	istringstream iss(target);
+	iss >> i;
+	g.add_node(i);	
 
 	stringstream ss(sources);
 	string source;
 	while (ss >> source) {
 	    // TODO: Add edges(s)
+	    istringstream iss(source);
+	    iss >> j;
+	    g.add_edge(i,j);
 	}
     }
 }
@@ -60,6 +66,24 @@ void read_makefile(const string& filename, graph<Node>& g, bool directed) {
 template <typename Node>
 void find_dependencies(const graph<Node> &g, const Node &target, vector<string> &dependencies) {
     // TODO: Perform graph traversal to find dependencies
+    stack<Node> frontier;
+    unordered_set<Node> marked;
+    frontier.push(target);
+    while(frontier.size() > 0) {
+	Node u = frontier.top();
+	frontier.pop();
+	auto got = g.edges.find(u);
+	marked.insert(u);
+	// add u to dependecies
+	if(u != target){
+		dependencies.push_back(u);
+	}
+	if(got != g.edges.end()) {
+	    for(Node v : got->second) {
+		if(marked.count(v) == 0) frontier.push(v);
+	    }
+	}
+    }
 }
 
 int main (int argc, char *argv[]) {
