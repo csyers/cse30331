@@ -51,3 +51,8 @@ There are 6 dependencies for target test1:
         test1.cpp
         test1.o
 ```
+
+
+
+**GRADER: Your Q8 score will be entered to Sakai separately**
+**GRADER: 2/2**
