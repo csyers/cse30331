@@ -38,7 +38,7 @@ int main (int argc, char *argv[]) {
   test_equal(steps.size(), 1);
   if (steps.size() == 1) {
     test_equal(steps[0].first, "E Wayne St");
-    test_close(steps[0].second, 0.0394904);
+    test_close(steps[0].second, 0.00232296);
   }
 
   m.geocode("1417 E Wayne St", su, sv, spos);
