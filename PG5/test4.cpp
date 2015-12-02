@@ -35,7 +35,7 @@ int main (int argc, char *argv[]) {
   m.geocode("1417 E Wayne St", su, sv, spos);
   m.geocode("1419 E Wayne St", tu, tv, tpos);
   test_equal(m.route4(su, sv, spos, tu, tv, tpos, distance), true);
-  test_close(distance, 0.0394904);
+  test_close(distance, 0.00232296);
 
   m.geocode("1417 E Wayne St", su, sv, spos);
   m.geocode("620 W Washington St", tu, tv, tpos);
