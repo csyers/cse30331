@@ -97,7 +97,7 @@ public:
 
   bool route4(int su, int sv, float spos, int tu, int tv, float tpos, float &distance) const;
 
-  bool route_helper(int su, int sv, float spos, int tu, int tv, float tpos, std::vector<path>& marked, float& distance) const;
+  bool route_helper(int su, int sv, float spos, int tu, int tv, float tpos, std::unordered_map<int,path>& marked, float& distance) const;
   
   std::string get_street_name(int su, int sv, std::string start_street, std::string end_street) const;
 

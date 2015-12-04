@@ -44,9 +44,7 @@ street_map::street_map (const string &filename) {
  //  The segments are supposed to be sorted, but just in case...
   for (auto side_segment : data)
     sort(side_segment.second.begin(), side_segment.second.end());
-  
 }
-
 bool street_map::geocode(const string &address, int &u, int &v, float &pos) const {
   istringstream iss(address);
   int hn;
@@ -70,6 +68,7 @@ bool street_map::geocode(const string &address, int &u, int &v, float &pos) cons
 }
 
 bool street_map::route(int su, int sv, float spos, int tu, int tv, float tpos, std::vector<std::pair<std::string, float>> & steps) const {
+/*
   steps.clear();
   float distance;
   vector<path> marked;
@@ -116,13 +115,14 @@ bool street_map::route(int su, int sv, float spos, int tu, int tv, float tpos, s
 //    }
 //  }
   reverse(steps.begin(),steps.end());
+*/
   return true;
 }
 
 
 bool street_map::route3(int source, int target, float &distance) const {
 
-  vector<path> marked;
+  unordered_map<int,path> marked;
   priority_queue<path> frontier;
 
   frontier.push(path(source,0,0,""));
@@ -134,15 +134,8 @@ bool street_map::route3(int source, int target, float &distance) const {
       distance = p.total_distance;
       return true;
     }
-    bool in_marked = false;
-    for(auto marked_node : marked){
-      if(marked_node.current_node == p.current_node){
-   	in_marked = true;
-	break;
-      }
-    }
-    if(!in_marked){
-      marked.push_back(p);
+    if(marked.find(p.previous_node) == marked.end()){
+      marked.insert({p.previous_node,p});
       auto neighbors = edges.find(p.current_node);
       if(neighbors != edges.end()){
         for(auto neighbor : neighbors->second){
@@ -155,11 +148,11 @@ bool street_map::route3(int source, int target, float &distance) const {
 }
 
 bool street_map::route4(int su, int sv, float spos, int tu, int tv, float tpos, float &distance) const {
-  vector<path> marked;
+  unordered_map<int,path> marked;
   return route_helper(su, sv, spos, tu, tv, tpos, marked, distance);
 }
 
-bool street_map::route_helper(int su, int sv, float spos, int tu, int tv, float tpos, vector<path>& marked, float& distance) const {
+bool street_map::route_helper(int su, int sv, float spos, int tu, int tv, float tpos, unordered_map<int,path>& marked, float& distance) const {
   if(su == tu && sv == tv){
     distance = abs(spos-tpos);
     return true;
@@ -186,7 +179,7 @@ bool street_map::route_helper(int su, int sv, float spos, int tu, int tv, float 
   }
   path source = path(-2,0,0,get_street_name(su,sv,"",""));
   path target = path(-1,0,0,get_street_name(tu,tv,"",""));
-  marked.push_back(source);
+  marked.insert({source.previous_node,source});
   frontier.push(path(su,spos,-2,get_street_name(su,sv,"","")));
   frontier.push(path(sv,sl-spos,-2,get_street_name(su,sv,"","")));
   while(frontier.size()>0){
@@ -204,18 +197,11 @@ bool street_map::route_helper(int su, int sv, float spos, int tu, int tv, float 
     }
     if(p.current_node == -1) {
       distance = p.total_distance;
-      marked.push_back(p);
+      marked.insert({p.previous_node,p});
       return true;
     }
-    bool in_marked = false;
-    for(auto marked_node : marked){
-      if(marked_node.current_node == p.current_node){
-   	in_marked = true;
-	break;
-      }
-    }
-    if(!in_marked){
-      marked.push_back(p);
+    if(marked.find(p.previous_node) == marked.end()){
+      marked.insert({p.previous_node,p});
       auto neighbors = edges.find(p.current_node);
       if(neighbors != edges.end()){
         for(auto neighbor : neighbors->second){
@@ -243,3 +229,4 @@ string street_map::get_street_name(int su, int sv, string start_street, string e
     }
   }
 }
+
