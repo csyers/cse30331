@@ -31,7 +31,6 @@ int main (int argc, char *argv[]) {
   int su, sv, tu, tv;
   float spos, tpos;
   vector<pair<string, float>> steps;
-  
   m.geocode("1417 E Wayne St", su, sv, spos);
   m.geocode("1419 E Wayne St", tu, tv, tpos);
   test_equal(m.route(su, sv, spos, tu, tv, tpos, steps), true);

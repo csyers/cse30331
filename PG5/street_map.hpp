@@ -6,31 +6,28 @@
 #include <utility>
 #include <unordered_map>
 #include <unordered_set>
-//#include <priority_queue>
-/*
-struct distance {
-  int node;
+#include <vector>
+#include <queue>
+
+struct path {
+  int current_node;
   float total_distance;
   int previous_node;
-  bool operator==(const distance &other) const { return node == other.node && total_distance == other.total_distance && previous_node == other.previous_node; }
-  distance(int node, float total_distance, int previous_node) : node(node), total_distance(total_distance), previous_node(previous_node) { }
+  std::string street_name;
+  path(int current_node, float total_distance, int previous_node, std::string street_name) : current_node(current_node), total_distance(total_distance), previous_node(previous_node), street_name(street_name) {}
+  bool operator==(const path& a) const {
+    return(current_node == a.current_node);
+  }
+  bool operator<(const path& a) const {
+    return(total_distance > a.total_distance);
+  }
 };
 
-namespace std {
-  template<>
-  struct hash<distance> {
-    hash<int> string_hasher;
-    size_t operator()(const distance &d) const {
-      return string_hasher(d.node) ^ d.previous_node ^ d.total_distance;
-    }
-  };
-}
-*/
 struct edge {
   int tonode;
   std::string street_name;
   float weight;
-  edge(int tonode, const std::string &street_name, int weight) : tonode(tonode), street_name(street_name), weight(weight) { }
+  edge(int tonode, const std::string &street_name, float weight) : tonode(tonode), street_name(street_name), weight(weight) { }
 };
 
 struct side {
@@ -100,6 +97,10 @@ public:
 
   bool route4(int su, int sv, float spos, int tu, int tv, float tpos, float &distance) const;
 
+  bool route_helper(int su, int sv, float spos, int tu, int tv, float tpos, std::vector<path>& marked, float& distance) const;
+  
+  std::string get_street_name(int su, int sv, std::string start_street, std::string end_street) const;
+
   // Input arguments:
   //   `su`, `sv` is the edge on which the source lies
   //   `spos`     is how far along the edge the source lies
@@ -114,7 +115,7 @@ public:
 
 private:
   std::unordered_map<side, std::vector<segment>> data;
-  std::unordered_map<int, std::vector<edge>> edges;
+  std::unordered_map<int,std::vector<edge>> edges;
 };
 
 #endif
