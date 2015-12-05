@@ -2,35 +2,54 @@
 #define STREET_MAP_HPP
 
 #include <string>
-#include <vector>
 #include <utility>
 #include <unordered_map>
 #include <unordered_set>
 #include <vector>
 #include <queue>
+#include <boost/functional/hash.hpp>
 
+// struct path: stores the information about a path starting at the source node
+// members: current_node - the node being looked at
+//          total_distance = the accumulated distance of the whole path
+//          previous_node = the node that is the previous step in the path
+//          street_name - the street name of the segment from the previous_node to the current_node
+// operators: < - needed for priority_queue<path> frontier, sorted by the total distance so it will be a minimum pq
+//
+// algorithms: used as the elements during Dijkstra's algorithm
 struct path {
+  // data members
   int current_node;
   float total_distance;
   int previous_node;
   std::string street_name;
-  path(int current_node, float total_distance, int previous_node, std::string street_name) : current_node(current_node), total_distance(total_distance), previous_node(previous_node), street_name(street_name) {}
-  bool operator==(const path& a) const {
-    return(current_node == a.current_node);
-  }
+  // constructor
+  path(int current_node = 0, float total_distance = 0, int previous_node = 0, std::string street_name = "") : current_node(current_node), total_distance(total_distance), previous_node(previous_node), street_name(street_name) {}
+  // overloaded operators
   bool operator<(const path& a) const {
-    return(total_distance > a.total_distance);
+    return(total_distance > a.total_distance);		// backwards to make the frontier work as a min priority queue
   }
 };
 
+// struct edge: stores destination, weight, and street name of an edge in the graph
+// members: tonode - the node that the edge goes to
+// 	    street_name - the name of the street along the edge
+// 	    weight - length of the edge
+// operators: == - needed for unordered_set of edges used in the edges data member of a street_map class
+//
+// algorithms: unordered_set of edge structs used for adjacency list
 struct edge {
+  // data members
   int tonode;
   std::string street_name;
   float weight;
-  edge(int tonode, const std::string &street_name, float weight) : tonode(tonode), street_name(street_name), weight(weight) { }
+  // constructor
+  edge(int tonode = 0, const std::string &street_name = "", float weight = 0) : tonode(tonode), street_name(street_name), weight(weight) { }
+  // overloaded operators
   bool operator==(const edge &other) const { return tonode == other.tonode && street_name == other.street_name && weight == other.weight; }
 };
 
+// TAKEN FROM PG4 SOLUTION PRoVIDED BY THE TAs
 struct side {
   std::string name;
   int parity;
@@ -38,26 +57,26 @@ struct side {
   side(const std::string &name, int parity) : name(name), parity(parity) { }
 };
 
-namespace std {
-  template<>
-  struct hash<side> {
-    hash<string> string_hasher;
-    size_t operator()(const side &s) const {
-      return string_hasher(s.name) ^ s.parity;
-    }
-  };
+// hash function for side object: needed for unordered_map<side,vector<...>> in data member "data"
+// boost definition as the combination of all data members of a side struct
+inline
+std::size_t hash_value(side const& s){
+  std::size_t h = boost::hash<std::string>()(s.name);
+  boost::hash_combine(h,s.parity);
+  return h;
 }
 
-namespace std {
-  template<>
-  struct hash<edge> {
-    hash<string> string_hasher;
-    size_t operator()(const edge &e) const {
-      return string_hasher(e.street_name) ^ e.tonode;
-    }
-  };
+// hash function for edge object: needed for unordered_set<edge> in adjacency list data member "edges"
+// boost definition as the combination of all data members of an edge struct
+inline
+std::size_t hash_value(edge const& e){
+  std::size_t h = boost::hash<std::string>()(e.street_name);
+  boost::hash_combine(h,e.tonode);
+  boost::hash_combine(h,e.weight);
+  return h;
 }
 
+// TAKEN FROM PG4 SOLUTION PROVIDED BY THE TAs
 struct segment {
   int fromhn, tohn;
   int fromnode,tonode;
@@ -68,6 +87,7 @@ struct segment {
   // there are lots of equivalent ways of comparing segments.
   bool operator<(const segment &other) const { return tohn < other.tohn; }
 };
+
 
 class street_map {
 public:
@@ -108,10 +128,17 @@ public:
 
   bool route4(int su, int sv, float spos, int tu, int tv, float tpos, float &distance) const;
 
+  // Input arguemnts: 
+  // 	'su', 'sv' is the edge on which the source lies
+  // 	'spos'     is how far along the edge the source lies
+  // 	'tu', 'tv' is the edge on which the target lies
+  // 	'tpos'	   is how far along the edge the target lies
+  // Output arguments:
+  // 	'marked'   is the set of marked nodes, which contains the information about the total distance of each step
+  // 	'distnace' is the shortest distance between them
+
   bool route_helper(int su, int sv, float spos, int tu, int tv, float tpos, std::unordered_map<int,path>& marked, float& distance) const;
   
-  std::string get_street_name(int su, int sv, std::string start_street, std::string end_street) const;
-
   // Input arguments:
   //   `su`, `sv` is the edge on which the source lies
   //   `spos`     is how far along the edge the source lies
@@ -125,8 +152,14 @@ public:
   bool route(int su, int sv, float spos, int tu, int tv, float tpos, std::vector<std::pair<std::string, float>> &steps) const;
 
 private:
-  std::unordered_map<side, std::vector<segment>> data;
-  std::unordered_map<int,std::unordered_set<edge>> edges;
+  // contains all the segments on a given side of a street
+  std::unordered_map<side, std::vector<segment>,boost::hash<side>> data;
+  // contains all of the edges found in the map, unordered. 
+  //   key: int - the source node
+  //   value: unordered_set<edge> - a set of all of the edges coming out of the source node
+  std::unordered_map<int,std::unordered_set<edge,boost::hash<edge>>> edges;
+  std::unordered_map<int,path> marked;
+  std::priority_queue<path> frontier;
 };
 
 #endif
