@@ -28,6 +28,7 @@ struct edge {
   std::string street_name;
   float weight;
   edge(int tonode, const std::string &street_name, float weight) : tonode(tonode), street_name(street_name), weight(weight) { }
+  bool operator==(const edge &other) const { return tonode == other.tonode && street_name == other.street_name && weight == other.weight; }
 };
 
 struct side {
@@ -43,6 +44,16 @@ namespace std {
     hash<string> string_hasher;
     size_t operator()(const side &s) const {
       return string_hasher(s.name) ^ s.parity;
+    }
+  };
+}
+
+namespace std {
+  template<>
+  struct hash<edge> {
+    hash<string> string_hasher;
+    size_t operator()(const edge &e) const {
+      return string_hasher(e.street_name) ^ e.tonode;
     }
   };
 }
@@ -115,7 +126,7 @@ public:
 
 private:
   std::unordered_map<side, std::vector<segment>> data;
-  std::unordered_map<int,std::vector<edge>> edges;
+  std::unordered_map<int,std::unordered_set<edge>> edges;
 };
 
 #endif

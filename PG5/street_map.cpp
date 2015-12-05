@@ -28,15 +28,15 @@ street_map::street_map (const string &filename) {
       if (data.find(s) == data.end())
 	data[s] = vector<segment>();
       data[s].push_back(segment(fromhn, tohn, url, fromnode, tonode, length));
-      edges[fromnode].push_back(edge(tonode,name,length));
-      edges[tonode].push_back(edge(fromnode,name,length));
+      edges[fromnode].insert(edge(tonode,name,length));
+      edges[tonode].insert(edge(fromnode,name,length));
     } else if (code == "E:") {
       int fromnode, tonode;
       float length;
       string url;
       iss >> fromnode >> tonode >> length >> url;
-      edges[fromnode].push_back(edge(tonode,name,length));
-      edges[tonode].push_back(edge(fromnode,name,length));
+      edges[fromnode].insert(edge(tonode,name,length));
+      edges[tonode].insert(edge(fromnode,name,length));
     } else {
       throw runtime_error("bad file format");
     }
@@ -68,54 +68,29 @@ bool street_map::geocode(const string &address, int &u, int &v, float &pos) cons
 }
 
 bool street_map::route(int su, int sv, float spos, int tu, int tv, float tpos, std::vector<std::pair<std::string, float>> & steps) const {
-/*
   steps.clear();
+  unordered_map<int,path> marked;
   float distance;
-  vector<path> marked;
+  float dis = 0.0;
   bool passed = route_helper(su,sv,spos,tu,tv,tpos,marked,distance);
-  if(!passed){
-    return false;
-  }
   if(su == tu && sv == tv){
     steps.push_back(make_pair(get_street_name(su,sv,"",""),distance));
     return true;
   }
-  string start_street, end_street;
-  path previous(0,0,-3,""), last(0,0,-3,"");
-  start_street = get_street_name(su,sv,"","");
-  end_street = get_street_name(tu,tv,"","");
-  for(auto node : marked){
-    if(node.current_node == -1){
-      last = node;
-      break;
-    }
+  if(!passed){
+    return false;
   }
-  previous = last;
-  while(previous.previous_node != 0){
-    for(auto node : marked){
-      if(previous.previous_node == node.current_node){
-        previous = node;
-	break;
-      }
+  path cursor(0,0,0,""), previous(0,0,0,"");
+  cursor = marked.at(-1);
+  while(cursor.previous_node != 0){
+    previous = marked.at(cursor.previous_node);
+    while(cursor.street_name == previous.street_name && previous.current_node != -2){
+      previous = marked.at(previous.previous_node);
     }
-    if(last.total_distance-previous.total_distance > 0 && last.street_name != previous.street_name){
-      steps.push_back(make_pair(last.street_name,last.total_distance-previous.total_distance));
-      last = previous;
-    } else {
-      previous.current_node = previous.previous_node;
-    }
+    steps.push_back(make_pair(cursor.street_name,cursor.total_distance-previous.total_distance));
+    cursor = previous;
   }
-  steps.push_back(make_pair(last.street_name,last.total_distance-previous.total_distance));
-  
-//  for(auto i = steps.begin(); i != steps.end()-1; i++){
-//    if(i->first == (i+1)->first){
-//      i->second = i->second + (i+1)->second;
-//      steps.erase(i+1);
-//      i--;
-//    }
-//  }
   reverse(steps.begin(),steps.end());
-*/
   return true;
 }
 
@@ -134,12 +109,11 @@ bool street_map::route3(int source, int target, float &distance) const {
       distance = p.total_distance;
       return true;
     }
-    if(marked.find(p.previous_node) == marked.end()){
-      marked.insert({p.previous_node,p});
-      auto neighbors = edges.find(p.current_node);
-      if(neighbors != edges.end()){
-        for(auto neighbor : neighbors->second){
-    	  frontier.push(path(neighbor.tonode,neighbor.weight + p.total_distance, p.current_node,""));
+    if(marked.count(p.current_node) == 0){
+      marked.insert({p.current_node,p});
+      if(edges.count(p.current_node) > 0){
+        for(auto neighbor : edges.at(p.current_node)){
+          frontier.push(path(neighbor.tonode,neighbor.weight + p.total_distance, p.current_node,""));
         }
       }
     }
@@ -159,29 +133,26 @@ bool street_map::route_helper(int su, int sv, float spos, int tu, int tv, float 
   }
   priority_queue<path> frontier;
   float sl = 0, tl = 0;
-  auto neighbors = edges.find(su);
-  if(neighbors != edges.end()){
-    for(auto neighbor : neighbors->second){
-      if(neighbor.tonode == sv){
-        sl = neighbor.weight;
-	break;
-      }
+  string start_street, end_street;
+  for(auto neighbor : edges.at(su)){
+    if(neighbor.tonode == sv){
+      sl = neighbor.weight;
+      start_street = neighbor.street_name;
+      break;
     }
   }
-  neighbors = edges.find(tu);
-  if(neighbors != edges.end()){
-    for(auto neighbor : neighbors->second){
-      if(neighbor.tonode == tv){
-        tl = neighbor.weight;
-	break;
-      }
+  for(auto neighbor : edges.at(tu)){
+    if(neighbor.tonode == tv){
+      tl = neighbor.weight;
+      end_street = neighbor.street_name;
+      break;
     }
   }
-  path source = path(-2,0,0,get_street_name(su,sv,"",""));
-  path target = path(-1,0,0,get_street_name(tu,tv,"",""));
-  marked.insert({source.previous_node,source});
-  frontier.push(path(su,spos,-2,get_street_name(su,sv,"","")));
-  frontier.push(path(sv,sl-spos,-2,get_street_name(su,sv,"","")));
+  path source = path(-2,0,0,start_street);
+  path target = path(-1,0,0,end_street);
+  marked.insert({source.current_node,source});
+  frontier.push(path(su,spos,-2,start_street));
+  frontier.push(path(sv,sl-spos,-2,start_street));
   while(frontier.size()>0){
     path p = frontier.top();
     frontier.pop();
@@ -197,15 +168,14 @@ bool street_map::route_helper(int su, int sv, float spos, int tu, int tv, float 
     }
     if(p.current_node == -1) {
       distance = p.total_distance;
-      marked.insert({p.previous_node,p});
+      marked.insert({p.current_node,p});
       return true;
     }
-    if(marked.find(p.previous_node) == marked.end()){
-      marked.insert({p.previous_node,p});
-      auto neighbors = edges.find(p.current_node);
-      if(neighbors != edges.end()){
-        for(auto neighbor : neighbors->second){
-    	  frontier.push(path(neighbor.tonode,neighbor.weight + p.total_distance, p.current_node,neighbor.street_name));
+    if(marked.count(p.current_node) == 0){
+      marked.insert({p.current_node,p});
+      if(edges.count(p.current_node) > 0){
+        for(auto neighbor : edges.at(p.current_node)){
+          frontier.push(path(neighbor.tonode,neighbor.weight + p.total_distance, p.current_node,neighbor.street_name));
         }
       }
     }
