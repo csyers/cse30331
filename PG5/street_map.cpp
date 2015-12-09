@@ -182,8 +182,9 @@ bool street_map::route_helper(int su, int sv, float spos, int tu, int tv, float 
   marked.insert({source.current_node,source});	// insert the phantom start node into marked
   frontier.push(path(su,spos,-2,start_street));		// insert a path from the phantom start node to su to frontier
   frontier.push(path(sv,sl-spos,-2,start_street));	// insert a path from the phantom start node to sv to frontier
-
+  int count = 0;
   while(frontier.size()>0){		// while the frontier is not empty
+    count++;
     // get the top element and remove it from the frontier
     path p = frontier.top();
     frontier.pop();
@@ -203,6 +204,7 @@ bool street_map::route_helper(int su, int sv, float spos, int tu, int tv, float 
     if(p.current_node == -1) {
       distance = p.total_distance;
       marked.insert({p.current_node,p});			// insert the last object into marked
+	cout << count << endl;
       return true;						// end algorithm
     }
     // if the current node is not already in marked
@@ -210,10 +212,13 @@ bool street_map::route_helper(int su, int sv, float spos, int tu, int tv, float 
       marked.insert({p.current_node,p});			// insert the current path into marked
       if(edges.count(p.current_node) > 0){			// loop through the neighbors of the current node...
         for(auto neighbor : edges.at(p.current_node)){
-          frontier.push(path(neighbor.tonode,neighbor.weight + p.total_distance, p.current_node,neighbor.street_name));	// add them to the frontier
+	  if(marked.find(neighbor.tonode) == marked.end()){
+            frontier.push(path(neighbor.tonode,neighbor.weight + p.total_distance, p.current_node,neighbor.street_name));	// add them to the frontier
+	  }
         }
       }
     }
   }
+	cout << count << endl;
   return false;
 }
